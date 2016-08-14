@@ -5,7 +5,7 @@
    "description":"Electron web app for the Ionic creator.",
    "private":true,
    "main":"main.js",
-   "author":"[MEADOW_DEV] (http://twitter.com/Meadowcottage13)",
+   "author":"[MEADOW_DEV] <bendixon50@gmail.com> (http://twitter.com/Meadowcottage13)",
    "license":"GNU General Public License",
    "homepage":"https://github.com/meadowcottage/Ionic-Creator/",
    "keywords":[
