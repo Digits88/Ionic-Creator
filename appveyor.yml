@@ -9,4 +9,4 @@ install:
 build: off
 
 test_script:
-  - npm run test
+  - npm test && npm run dist
