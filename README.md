@@ -21,10 +21,6 @@
 
 <img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-2.png"/>
 
-<img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-dark-1.png"/>
-
-<img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-dark-2.png"/>
-
 ## Install
 
 [Download the lastest version](https://github.com/Meadowcottage/Ionic-Creator/releases).
