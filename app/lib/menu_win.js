@@ -75,6 +75,12 @@ var template = [{
           label: 'Toggle Fullscreen',
           accelerator: 'F11',
           role: 'togglefullscreen'
+        }, {
+          label: 'Toggle Dev Tools',
+          accelerator: 'F12',
+          click (item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+          }
         }
     ]
 }, {
