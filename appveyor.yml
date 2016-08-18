@@ -1,6 +1,8 @@
 platform:
   - x64
 
+os: unstable
+
 install:
   - ps: Install-Product node 6 x64
   - npm install
