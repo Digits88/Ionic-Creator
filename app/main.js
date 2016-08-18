@@ -17,27 +17,31 @@ let mainWindow
 // Chooses titleBarStyle based on OS
 var app_titleBarStyle;
 
+// Set Application Menu
+var appmenu;
+
 app.on('ready', function createWindow() {
   // If OS is Darwin(MacOS)
   if (process.platform == 'darwin') {
     app_titleBarStyle = 'hidden-inset';
-    menu.setApplicationMenu(require('./lib/menu_osx.js'));
+    appmenu = './lib/menu_osx.js';
   } else {
     app_titleBarStyle = 'default';
-    menu.setApplicationMenu(require('./lib/menu_win.js'));
+    appmenu = './lib/menu_win.js';
   }
   mainWindow = new browserWindow({
-  title: app_title,
-  titleBarStyle: app_titleBarStyle,
-  movable: true,
-  width: 1280,
-  height: 720,
-  minWidth: 850,
-  minHeight: 530,
-  fullscreenable: true,
-  resizable: true,
-  autoHideMenuBar: true
+    title: app_title,
+    titleBarStyle: app_titleBarStyle,
+    movable: true,
+    width: 1280,
+    height: 720,
+    minWidth: 850,
+    minHeight: 530,
+    fullscreenable: true,
+    resizable: true,
+    autoHideMenuBar: true
   })
+  menu.setApplicationMenu(require(appmenu))
   mainWindow.loadURL('file://' + __dirname + '/index.html')
   mainWindow.on('closed', function() {
     mainWindow = null
