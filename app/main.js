@@ -20,9 +20,6 @@ const fs = require('fs');
 // Main Application Window
 let mainWindow
 
-// Application Menu
-var app_menu;
-
 // Main Window
 function createMainWindow() {
     const lastWindowState = app_config.get('lastWindowState');
