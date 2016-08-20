@@ -67,7 +67,7 @@ app.on('ready', function createWindow() {
         app_page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/app.css'), 'utf8'));
 
         // Dark theme stylesheet
-        app_page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/dark-theme.css'), 'utf8'));
+        //app_page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/dark-theme.css'), 'utf8'));
 
         // MacOS Logo offset
         if (process.platform == 'darwin') { app_page.insertCSS('.navbar-left{ margin-left: 64px;!important; }'); }
