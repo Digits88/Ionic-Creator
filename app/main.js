@@ -49,14 +49,8 @@ function createMainWindow() {
 }
 
 app.on('ready', function createWindow() {
-    // If OS is Darwin(MacOS)
-    if (process.platform == 'darwin') {
-        app_menu = './lib/menu_osx.js';
-    } else {
-        app_menu = './lib/menu_win.js';
-    }
     mainWindow = createMainWindow();
-    menu.setApplicationMenu(require(app_menu))
+    menu.setApplicationMenu(require('./menu'))
     if (app_is_dev) { mainWindow.openDevTools() }
 
     const app_page = mainWindow.webContents;
