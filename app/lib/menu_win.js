@@ -24,7 +24,7 @@ var template = [{
         click() {
             // Some code goes here.
         }
-    } {
+    }, {
         type: 'separator'
     }, {
         label: 'Quit',
@@ -124,4 +124,4 @@ var template = [{
     }]
 }];
 
-module.exports = Menu.buildFromTemplate(template)
+module.exports = app_menu.buildFromTemplate(template)
