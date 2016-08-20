@@ -6,9 +6,9 @@ const menu = electron.Menu;
 
 //App Info
 const app = electron.app;
-const app_name = 'Ionic-Creator';
-const app_title = 'Ionic Creator';
-const app_version = '1.0.2';
+const app_name = app.getName();
+const app_title = app.getName();
+const app_version = app.getVersion();
 const app_description = 'Electron web app for the Ionic creator.';
 const app_config = require('./config');
 const app_is_dev = require('electron-is-dev');
