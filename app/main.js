@@ -8,68 +8,100 @@ const menu = electron.Menu;
 const app = electron.app;
 const app_name = 'Ionic-Creator';
 const app_title = 'Ionic Creator';
-const app_version = '1.0.1';
+const app_version = '1.0.2';
 const app_description = 'Electron web app for the Ionic creator.';
+const app_config = require('./config');
+const app_is_dev = require('electron-is-dev');
 
-// Main App Window
+// System paths
+const path = require('path');
+const fs = require('fs');
+
+// Main Application Window
 let mainWindow
 
-// Chooses titleBarStyle based on OS
-var app_titleBarStyle;
+// Application Menu
+var app_menu;
 
-// Set Application Menu
-var appmenu;
+// Main Window
+function createMainWindow() {
+    const lastWindowState = app_config.get('lastWindowState');
+    const app_view = new electron.BrowserWindow({
+        title: app_title,
+        x: lastWindowState.x,
+        y: lastWindowState.y,
+        width: lastWindowState.width,
+        height: lastWindowState.height,
+        minWidth: 850,
+        minHeight: 530,
+        resizable: true,
+        movable: true,
+        fullscreenable: true,
+        autoHideMenuBar: true,
+        titleBarStyle: 'hidden-inset',
+        webPreferences: {
+            nodeIntegration: false,
+            plugins: true
+        }
+    });
+    app_view.loadURL('https://creator.ionic.io');
+    return app_view;
+}
 
 app.on('ready', function createWindow() {
-  // If OS is Darwin(MacOS)
-  if (process.platform == 'darwin') {
-    app_titleBarStyle = 'hidden-inset';
-    appmenu = './lib/menu_osx.js';
-  } else {
-    app_titleBarStyle = 'default';
-    appmenu = './lib/menu_win.js';
-  }
-  mainWindow = new browserWindow({
-    title: app_title,
-    titleBarStyle: app_titleBarStyle,
-    movable: true,
-    width: 1280,
-    height: 720,
-    minWidth: 850,
-    minHeight: 530,
-    fullscreenable: true,
-    resizable: true,
-    autoHideMenuBar: true
-  })
-  menu.setApplicationMenu(require(appmenu))
-  mainWindow.loadURL('file://' + __dirname + '/index.html')
-  mainWindow.on('closed', function() {
-    mainWindow = null
-  })
-
-  //Shortcut to reload the page.
-  globalShortcut.register('CmdOrCtrl+R', () => {
-    mainWindow.webContents.reload();
-  })
-  globalShortcut.register('CmdOrCtrl+Left', () => {
-    mainWindow.webContents.goBack();
-    mainWindow.webContents.reload();
-  })
-
-  mainWindow.on('app-command', (e, cmd) => {
-    // Navigate the window back when the user hits their mouse back button
-    if (cmd === 'browser-backward' && mainWindow.webContents.canGoBack()) {
-      mainWindow.webContents.goBack()
+    // If OS is Darwin(MacOS)
+    if (process.platform == 'darwin') {
+        app_menu = './lib/menu_osx.js';
+    } else {
+        app_menu = './lib/menu_win.js';
     }
-  })
+    mainWindow = createMainWindow();
+    menu.setApplicationMenu(require(app_menu))
+    if (app_is_dev) { mainWindow.openDevTools() }
+
+    const app_page = mainWindow.webContents;
+
+    app_page.on('dom-ready', () => {
+
+        // Stock style additions
+        app_page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/app.css'), 'utf8'));
+
+        // Dark theme stylesheet
+        app_page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/dark-theme.css'), 'utf8'));
+
+        // MacOS Logo offset
+        if (process.platform == 'darwin') { app_page.insertCSS('.navbar-left{ margin-left: 64px;!important; }'); }
+
+        mainWindow.show();
+    });
+
+    //Open external links in browser
+    app_page.on('new-window', (e, url) => {
+        e.preventDefault();
+        electron.shell.openExternal(url);
+    });
+
+    //Shortcut to reload the page.
+    globalShortcut.register('CmdOrCtrl+R', () => {
+        mainWindow.webContents.reload();
+    })
+    globalShortcut.register('CmdOrCtrl+Left', () => {
+        mainWindow.webContents.goBack();
+        mainWindow.webContents.reload();
+    })
+
+    mainWindow.on('app-command', (e, cmd) => {
+        // Navigate the window back when the user hits their mouse back button
+        if (cmd === 'browser-backward' && mainWindow.webContents.canGoBack()) {
+            mainWindow.webContents.goBack()
+        }
+    })
 })
 app.on('window-all-closed', function() {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
 })
 app.on('activate', function() {
-  if (mainWindow === null) {
-    createWindow()
-  }
+    mainWindow.show();
 })

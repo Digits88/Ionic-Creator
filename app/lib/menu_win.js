@@ -1,10 +1,10 @@
-var Menu = require('electron').Menu
-
 //Electron
 const electron = require('electron');
+const BrowserWindow = electron.BrowserWindow;
 const app = electron.app;
 const app_name = app.getName();
 const app_version = app.getVersion();
+const app_menu = electron.Menu;
 
 var template = [{
     label: 'File',
@@ -17,6 +17,14 @@ var template = [{
         accelerator: 'Control+Shift+H',
         role: 'hideothers'
     }, {
+        type: 'separator'
+    }, {
+        label: 'Toggle Theme',
+        accelerator: 'Control+D',
+        click() {
+            // Some code goes here.
+        }
+    } {
         type: 'separator'
     }, {
         label: 'Quit',
@@ -54,35 +62,33 @@ var template = [{
     }]
 }, {
     label: 'View',
-    submenu: [
-        {
-            label: 'Back',
-            accelerator: 'Backspace',
-            click: function(item, focusedWindow) {
-                if (focusedWindow && focusedWindow.webContents.canGoBack())
+    submenu: [{
+        label: 'Back',
+        accelerator: 'Backspace',
+        click: function(item, focusedWindow) {
+            if (focusedWindow && focusedWindow.webContents.canGoBack())
                 focusedWindow.webContents.goBack();
-                focusedWindow.webContents.reload();
-            }
-        }, {
-            type: 'separator'
-        }, {
-            label: 'Reload',
-            accelerator: 'F5',
-            click: function(item, focusedWindow) {
-                if (focusedWindow) focusedWindow.webContents.reload();
-            }
-        }, {
-          label: 'Toggle Fullscreen',
-          accelerator: 'F11',
-          role: 'togglefullscreen'
-        }, {
-          label: 'Toggle Dev Tools',
-          accelerator: 'F12',
-          click (item, focusedWindow) {
-            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
-          }
+            focusedWindow.webContents.reload();
         }
-    ]
+    }, {
+        type: 'separator'
+    }, {
+        label: 'Reload',
+        accelerator: 'F5',
+        click: function(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.reload();
+        }
+    }, {
+        label: 'Toggle Fullscreen',
+        accelerator: 'F11',
+        role: 'togglefullscreen'
+    }, {
+        label: 'Toggle Dev Tools',
+        accelerator: 'F12',
+        click(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+        }
+    }]
 }, {
     label: 'Window',
     role: 'window',

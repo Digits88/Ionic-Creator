@@ -1,21 +1,29 @@
-var Menu = require('electron').Menu
-
 //Electron
 const electron = require('electron');
+const BrowserWindow = electron.BrowserWindow;
 const app = electron.app;
 const app_name = app.getName();
 const app_version = app.getVersion();
+const app_menu = electron.Menu;
 
 var template = [{
     label: 'Application',
     submenu: [{
-          label: 'Hide ' + app_name,
+        label: 'Hide ' + app_name,
         accelerator: 'Command+H',
         role: 'hide'
     }, {
         label: 'Hide Others',
         accelerator: 'Command+Shift+H',
         role: 'hideothers'
+    }, {
+        type: 'separator'
+    }, {
+        label: 'Toggle Theme',
+        accelerator: 'Cmd+D',
+        click() {
+            // Some code goes here.
+        }
     }, {
         type: 'separator'
     }, {
@@ -56,34 +64,32 @@ var template = [{
     }]
 }, {
     label: 'View',
-    submenu: [
-        {
-            label: 'Back',
-            accelerator: 'Cmd+Left',
-            click: function(item, focusedWindow) {
-                if (focusedWindow) focusedWindow.webContents.goBack();
-                focusedWindow.webContents.reload();
-            }
-        }, {
-            type: 'separator'
-        }, {
-            label: 'Reload',
-            accelerator: 'Cmd+R',
-            click: function(item, focusedWindow) {
-                if (focusedWindow) focusedWindow.webContents.reload();
-            }
-        }, {
-          label: 'Toggle Fullscreen',
-          accelerator: 'Cmd+F',
-          role: 'togglefullscreen'
-        }, {
-          label: 'Toggle Dev Tools',
-          accelerator: 'F12',
-          click (item, focusedWindow) {
-            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
-          }
+    submenu: [{
+        label: 'Back',
+        accelerator: 'Cmd+Left',
+        click: function(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.goBack();
+            focusedWindow.webContents.reload();
         }
-    ]
+    }, {
+        type: 'separator'
+    }, {
+        label: 'Reload',
+        accelerator: 'Cmd+R',
+        click: function(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.reload();
+        }
+    }, {
+        label: 'Toggle Fullscreen',
+        accelerator: 'Cmd+F',
+        role: 'togglefullscreen'
+    }, {
+        label: 'Toggle Dev Tools',
+        accelerator: 'F12',
+        click(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+        }
+    }]
 }, {
     label: 'Window',
     role: 'window',
@@ -119,4 +125,4 @@ var template = [{
     }]
 }];
 
-module.exports = Menu.buildFromTemplate(template)
+module.exports = app_menu.buildFromTemplate(template)
