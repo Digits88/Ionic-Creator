@@ -20,6 +20,9 @@ const fs = require('fs');
 // Main Application Window
 let mainWindow
 
+// If the application is quitting
+let isQuitting = false;
+
 // Main Window
 function createMainWindow() {
     const lastWindowState = app_config.get('lastWindowState');
@@ -42,10 +45,23 @@ function createMainWindow() {
         }
     });
     app_view.loadURL('https://creator.ionic.io');
+
+    // When window is closed, hide window
+    app_view.on('close', e => {
+        if (!isQuitting) {
+            e.preventDefault();
+            if (process.platform === 'darwin') {
+                app.hide();
+            } else {
+                app_view.hide();
+            }
+        }
+
+    });
     return app_view;
 }
 
-app.on('ready', function createWindow() {
+app.on('ready', () => {
     mainWindow = createMainWindow();
     menu.setApplicationMenu(require('./menu'))
     if (app_is_dev) { mainWindow.openDevTools() }
@@ -88,11 +104,14 @@ app.on('ready', function createWindow() {
         }
     })
 })
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit()
     }
 })
-app.on('activate', function() {
-    mainWindow.show();
+app.on('activate', () => {
+    mainWindow.show()
 })
+app.on('before-quit', () => {
+	isQuitting = true;
+});
