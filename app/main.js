@@ -17,6 +17,9 @@ const app_is_dev = require('electron-is-dev');
 const path = require('path');
 const fs = require('fs');
 
+//Electron DL
+require('electron-dl')();
+
 // Main Application Window
 let mainWindow
 
