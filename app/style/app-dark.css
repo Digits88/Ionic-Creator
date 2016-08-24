@@ -3,6 +3,8 @@
 #login {
     background-color: #263238!important;
 }
+#navbar-right > span:nth-child(1) > span.dropdown > a,
+#navbar-right > span.dropdown.open > ul,
 #dashboard-footer,
 #dashboard .card,
 #login input,
@@ -29,6 +31,9 @@
 #login > div > form > p:nth-child(1),
 #login > div > form > div.pull-right,
 #login > div > div.message > h3,
+#dashboard-help .card.help h3,
+
+.dropdown-menu > li > a,
 #dashboard-footer,
 #dashboard-footer,
 #document-name,
