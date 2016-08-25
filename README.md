@@ -23,7 +23,7 @@
 
 ## Install
 
-[Download the lastest version](https://github.com/Meadowcottage/Ionic-Creator/releases).
+<a href="https://github.com/Meadowcottage/Ionic-Creator/releases"><img alt='Downloads' src="https://img.shields.io/badge/DOWNLOADS-HERE-brightgreen.svg?style=flat-square"></a>
 
 ## Development
 
