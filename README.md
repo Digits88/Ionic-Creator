@@ -16,7 +16,7 @@
 [<img alt='Ionic Creator' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-2.png">](https://github.com/Meadowcottage/Ionic-Creator/releases)
 
 ## Downloads
-> Downloads can be found on the [releases page](https://github.com/Meadowcottage/Ionic-Creator/releases) or install on OS X via [homebrew](http://brew.sh) using `brew cask install Ionic-Creator`.
+> Downloads can be found on the [releases page](https://github.com/Meadowcottage/Ionic-Creator/releases)
 
 ## Development
 
