@@ -1,44 +1,39 @@
-<h1 align="center">
-  <a href="https://creator.ionic.io"><img alt='Ionic Creator' width='256' height='256' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/icon.png"></a>
-  <br>
-    Ionic-Creator (UNOFFICIAL)
-  <br>
-</h1>
+<img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/icon.png" align="left" width="192px" height="192px"/>
+<img align="left" width="0" height="192px" hspace="10"/>
 
-<h4 align="center">This is the unofficial <a href="https://creator.ionic.io/">Ionic-Creator</a> web app. Built using the <a href="http://electron.atom.io/">Electron</a> framework to take the current live feed site and give it to you as a desktop app.</h4>
+# Ionic Creator (UNOFFICIAL)
+> This is the unofficial [Ionic-Creator](https://creator.ionic.io/) web app. Built using the [Electron](http://electron.atom.io) framework to take the current live feed site and give it to you as a desktop app.
 
-<p align="center">
-  <a href="https://travis-ci.org/Meadowcottage/Ionic-Creator"><img src="https://img.shields.io/travis/Meadowcottage/Ionic-Creator/master.svg?style=flat-square" alt="Travis"></a>
-  <a href="https://ci.appveyor.com/project/Meadowcottage/Ionic-Creator"><img src="https://img.shields.io/appveyor/ci/meadowcottage/Ionic-Creator.svg?style=flat-square" alt="Appveyor"></a>
-  <a href="https://github.com/Meadowcottage/Ionic-Creator/releases"><img src="https://img.shields.io/github/release/Meadowcottage/Ionic-Creator.svg?style=flat-square" alt="Release"></a>
-  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bendixon50%40gmail%2ecom&item_name=Tip%20for%20Meadowcottage&currency_code=GBP"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square" alt="Paypal"></a>
-  <a href="https://github.com/Meadowcottage/Ionic-Creator/releases"><img src="https://img.shields.io/github/downloads/meadowcottage/Ionic-Creator/total.svg?style=flat-square" alt="Downloads"></a>
-</p>
+[![Travis](https://img.shields.io/travis/Meadowcottage/Ionic-Creator/master.svg?style=flat-square)](https://travis-ci.org/Meadowcottage/Ionic-Creator) [![Appveyor](https://img.shields.io/appveyor/ci/meadowcottage/Ionic-Creator.svg?style=flat-square)](https://ci.appveyor.com/project/Meadowcottage/Ionic-Creator) [![Release](https://img.shields.io/github/release/Meadowcottage/Ionic-Creator.svg?style=flat-square)](https://github.com/Meadowcottage/Ionic-Creator/releases) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bendixon50%40gmail%2ecom&item_name=Tip%20for%20Meadowcottage&currency_code=GBP) [![Downloads](https://img.shields.io/github/downloads/meadowcottage/Ionic-Creator/total.svg?style=flat-square)](https://github.com/Meadowcottage/Ionic-Creator/releases) [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/)
 
-## Screenshots
+<br>
+<br>
 
-<img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-1.png"/>
+# Screenshots
 
-<img src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-2.png"/>
+[<img alt='Ionic Creator' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-1.png">](https://github.com/Meadowcottage/Ionic-Creator/releases)
 
-## Install
+[<img alt='Ionic Creator' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/Screenshot-light-2.png">](https://github.com/Meadowcottage/Ionic-Creator/releases)
 
-<a href="https://github.com/Meadowcottage/Ionic-Creator/releases"><img alt='Downloads' src="https://img.shields.io/badge/DOWNLOADS-HERE-brightgreen.svg?style=flat-square"></a>
+## Downloads
+> Downloads can be found on the [releases page](https://github.com/Meadowcottage/Ionic-Creator/releases) or install on OS X via [homebrew](http://brew.sh) using `brew cask install Ionic-Creator`.
 
 ## Development
 
-- Clone: `$ git clone https://github.com/Meadowcottage/Ionic-Creator.git`
-- Install NPM: `$ npm install`
-- Start Preview: `$ npm start`
-- Build: `$ npm run dist`
+```
+$ git clone https://github.com/Meadowcottage/Ionic-Creator.git
+$ npm install
+$ npm start
+$ npm run dist
+```
 
 ## SUPPORT
 
-[<img width='45' height="45" align='left' alt='Ionic-Creator' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/icon.png">](https://creator.ionic.io/) Most of the support for this app must go to the Ionic-Creator team and the work they put in to make the platform itself and continue to make it great for streamers to use. To support [Ionic-Creator](https://creator.ionic.io/), who built the platform, feel free to check out their site for more details.
+[<img width='45' height="45" align='left' alt='Ionic-Creator' src="https://raw.githubusercontent.com/Meadowcottage/Ionic-Creator/master/build/icon.png">](https://creator.ionic.io/) Most of the support for this app must go to the Ionic-Creator team and the work they put in to make the platform itself and continue to make it great for us developers. To support [Ionic-Creator](https://creator.ionic.io/), who built the platform, feel free to check out their site for more details.
 
-[<img width='45' height="45" align='left' alt='Github' src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">](https://github.com/Meadowcottage/Ionic-Creator) Feel free to help support this unofficial app by submitting issues or bugs so we can resolve and fox them or even feel free to submit pull requests if you have already helped develop a fix for one of the bugs in the app.
+[<img width='45' height="45" align='left' alt='Github' src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">](https://github.com/Meadowcottage/Ionic-Creator) Feel free to help support this unofficial app by submitting issues or bugs so we can resolve and fix them or even feel free to submit pull requests if you have already helped develop a fix for one of the bugs in the app.
 
-## LICENSE:
+## License
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
