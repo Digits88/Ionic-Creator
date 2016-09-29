@@ -9,8 +9,8 @@
     "dist": "npm run compile && build"
   },
   "build": {
-    "appId": "uk.meadowcottage.ionic-creator",
-    "category": "public.app-category.social",
+    "appId": "xyz.meadowcottage.ionic-creator",
+    "category": "public.app-category.tools",
     "productName": "Ionic-Creator",
     "dmg": {
       "contents": [
