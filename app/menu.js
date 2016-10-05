@@ -110,6 +110,11 @@ var template_win = [{
             require('electron').shell.openExternal("https://github.com/Meadowcottage/Ionic-Creator/releases/tag/" + app_version)
         }
     }, {
+        label: 'Version ' + app_version,
+        enabled: false
+    }, {
+        type: 'separator'
+    }, {
         label: 'View Ionic-Creator',
         click: function() {
             require('electron').shell.openExternal("https://creator.ionic.io/")
@@ -237,6 +242,11 @@ var template_osx = [{
         click: function() {
             require('electron').shell.openExternal("https://github.com/Meadowcottage/Ionic-Creator/releases/tag/" + app_version)
         }
+    }, {
+        label: 'Version ' + app_version,
+        enabled: false
+    }, {
+        type: 'separator'
     }, {
         label: 'View Ionic-Creator',
         click: function() {
