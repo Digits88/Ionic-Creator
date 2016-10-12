@@ -9,9 +9,9 @@
     "dist": "npm run compile && build"
   },
   "build": {
-    "appId": "xyz.meadowcottage.ionic-creator",
+    "appId": "xyz.meadowcottage.ionic_creator",
     "category": "public.app-category.tools",
-    "productName": "Ionic-Creator",
+    "productName": "Ionic Creator",
     "dmg": {
       "contents": [
         {
@@ -29,7 +29,8 @@
     },
     "win": {
       "remoteReleases": "https://github.com/meadowcottage/Ionic-Creator",
-      "loadingGif": "build/install-spinner.gif"
+      "loadingGif": "build/install-spinner.gif",
+      "msi": true
     }
   },
   "dependencies": {

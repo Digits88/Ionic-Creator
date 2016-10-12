@@ -1,11 +1,15 @@
 {
-  "name": "Ionic-Creator",
+  "name": "ionic_creator",
   "productName": "Ionic Creator",
   "version": "1.0.2",
   "description": "Electron web app for the Ionic creator.",
   "private": true,
   "main": "main.js",
-  "author": "[MEADOW_DEV] <bendixon50@gmail.com> (http://twitter.com/Meadowcottage13)",
+  "author": {
+    "name": "[MEADOW_DEV]",
+    "email": "bendixon50@gmail.com",
+    "url": "meadowcottage.xyz"
+  },
   "license": "GNU General Public License",
   "homepage": "https://github.com/meadowcottage/Ionic-Creator/",
   "keywords": [
