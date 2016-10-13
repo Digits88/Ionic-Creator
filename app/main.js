@@ -67,7 +67,6 @@ function createMainWindow() {
 app.on('ready', () => {
     mainWindow = createMainWindow();
     menu.setApplicationMenu(require('./menu'))
-    if (app_is_dev) { mainWindow.openDevTools() }
 
     const app_page = mainWindow.webContents;
 
@@ -81,6 +80,9 @@ app.on('ready', () => {
 
         // MacOS Logo offset
         if (process.platform == 'darwin') { app_page.insertCSS('.navbar-left{ margin-left: 64px;!important; }'); }
+
+        // opens dev tools
+        mainWindow.openDevTools()
 
         mainWindow.show();
     });
