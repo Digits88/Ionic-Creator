@@ -28,6 +28,10 @@
       ]
     },
     "win": {
+      "target": [
+        "squirrel",
+        "zip"
+      ],
       "remoteReleases": "https://github.com/meadowcottage/Ionic-Creator",
       "loadingGif": "build/install-spinner.gif",
       "msi": true
