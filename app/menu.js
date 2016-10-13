@@ -105,7 +105,7 @@ var template_win = [{
     label: 'Help',
     role: 'help',
     submenu: [{
-        label: 'About Ionic-Creator',
+        label: 'About ' + app_name,
         click: function() {
             require('electron').shell.openExternal("https://github.com/Meadowcottage/Ionic-Creator/releases/tag/" + app_version)
         }
@@ -115,7 +115,7 @@ var template_win = [{
     }, {
         type: 'separator'
     }, {
-        label: 'View Ionic-Creator',
+        label: 'View ' + app_name,
         click: function() {
             require('electron').shell.openExternal("https://creator.ionic.io/")
         }
@@ -238,7 +238,7 @@ var template_osx = [{
     label: 'Help',
     role: 'help',
     submenu: [{
-        label: 'About Ionic-Creator',
+        label: 'About ' + app_name,
         click: function() {
             require('electron').shell.openExternal("https://github.com/Meadowcottage/Ionic-Creator/releases/tag/" + app_version)
         }
@@ -248,7 +248,7 @@ var template_osx = [{
     }, {
         type: 'separator'
     }, {
-        label: 'View Ionic-Creator',
+        label: 'View ' + app_name,
         click: function() {
             require('electron').shell.openExternal("https://creator.ionic.io/")
         }
