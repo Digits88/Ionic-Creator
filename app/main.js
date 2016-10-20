@@ -68,6 +68,9 @@ app.on('ready', () => {
     mainWindow = createMainWindow();
     menu.setApplicationMenu(require('./menu'))
 
+    // Opens dev tools
+    mainWindow.openDevTools()
+
     const app_page = mainWindow.webContents;
 
     app_page.on('dom-ready', () => {
@@ -80,9 +83,6 @@ app.on('ready', () => {
 
         // MacOS Logo offset
         if (process.platform == 'darwin') { app_page.insertCSS('.navbar-left{ margin-left: 64px;!important; }'); }
-
-        // opens dev tools
-        mainWindow.openDevTools()
 
         mainWindow.show();
     });
