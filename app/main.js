@@ -1,11 +1,7 @@
 //Electron
-const electron = require('electron');
-const globalShortcut = electron.globalShortcut;
-const browserWindow = electron.BrowserWindow;
-const menu = electron.Menu;
+const { app, electron, globalShortcut, BrowserWindow, Menu } = require('electron');
 
 //App Info
-const app = electron.app;
 const app_name = app.getName();
 const app_title = app.getName();
 const app_version = app.getVersion();
